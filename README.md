@@ -1,3 +1,5 @@
-# practica1-2021
-Este es un proyecto de prueba con git
+# My files about python
+Aquí están los archivos py, que fuí realizando para aprender python
+
+
 
