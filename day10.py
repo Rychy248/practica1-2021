@@ -36,7 +36,7 @@ def operation(operations={}):
         if operator in list_symbols:
             invalid_operator = False
         else:
-            print(f"\n'{operator}' is a invalid option!\n")
+            print(f"\n'{operator}' isn't a invalid option!\n")
 
     return operator
 

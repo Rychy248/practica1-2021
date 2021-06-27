@@ -1,6 +1,8 @@
 import os
 import time
-import day10_art as art
+import random
+
+import day11_art as art
 
 c = lambda : os.system('clear')
 
@@ -11,56 +13,31 @@ def clean():
     input("\n\nPress enter, to continue....")
     c()
  
- 
 #DAY END PROJECT
+def init_cards_packs(pack_want=4):
+        def card_pack_f():
+                card_pack ={ 
+                     "A": [11,1],
+                     "2": 2,
+                     "3": 3,
+                     "4": 4,
+                     "5": 5,
+                     "6": 6,
+                     "7": 7,
+                     "8": 8,
+                     "9": 9,
+                     "10": 10,
+                     "J": 10,
+                     "Q": 10,
+                     "k": 10
+                     }
+                return card_pack
 
-############### Our Blackjack House Rules #####################
-## The deck is unlimited in size. 
-## There are no jokers. 
-## The Jack/Queen/King all count as 10.
-## The the Ace can count as 11 or 1.
-## Use the following list as the deck of cards:
-## cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-## The cards in the list have equal probability of being drawn.
-## Cards are not removed from the deck as they are drawn.
-## The computer is the dealer.
-
-##################### Hints #####################
-#Hint 1: Go to this website and try out the Blackjack game: 
-#   https://games.washingtonpost.com/games/blackjack/
-#Then try out the completed Blackjack project here: 
-#   http://blackjack-final.appbrewery.repl.run
-
-#Hint 2: Read this breakdown of program requirements: 
-#   http://listmoz.com/view/6h34DJpvJBFVRlZfJvxF
-#Then try to create your own flowchart for the program.
-
-#Hint 3: Download and read this flow chart I've created: 
-#   https://drive.google.com/uc?export=download&id=1rDkiHCrhaf9eX7u7yjM1qwSuyEk-rPnt
-
-#Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
-#11 is the Ace.
-
-def init_cards_packs():
-        card_pack = [
-            {"A": [11,1]},
-            {"2": 2},
-            {"3": 3},
-            {"4": 4},
-            {"5": 5},
-            {"6": 6},
-            {"7": 7},
-            {"8": 8},
-            {"9": 9},
-            {"10": 10},
-            {"J": 10},
-            {"Q": 10},
-            {"k": 10}
-            ]
-
-        cards = []
-        for pack_card in range(4):
-                cards.append(card_pack)
+        cards = {}
+        for pack_card in range(pack_want):
+                key_name = f"pack{pack_card}"
+                cards[key_name] = card_pack_f()
+                print(key_name)
         return cards
 
 def select_beat(bank=0):
@@ -87,7 +64,7 @@ def select_beat(bank=0):
                         value = 0
                         while max_value >= posible_sustract[options] and options <= 6:
                                 value = posible_sustract[options]
-                                print(f"{options+1} = +${value}")
+                                print(f"{options+1} = -${value}")
                                 if options < 6:
                                         options+=1
                                 else:
@@ -115,14 +92,15 @@ def select_beat(bank=0):
                                 player_bank+=temp_beat_selected 
                                 print(f"Less {temp_beat_selected}")
                                 if beat_var == 0:
-                                        print("It's all your money,You're exiting... and...")
+                                        print("\nIt's all your money,You're exiting... and...")
                                         print("Your beat can't be 0, we added one")
                                         beat_var += 1
                                         player_bank -= 1
                                         print(f"Beat = ${beat_var}, Bank = ${player_bank}")
                                         option = options +1
-                                        time.sleep(3)
-                                        c()
+                                        time.sleep(1)
+                                time.sleep(1)
+                                c()
                         else:
                                 print("Option no reconcing")
                                 option = 0
@@ -168,7 +146,7 @@ def select_beat(bank=0):
                                         beat_var += 1
                                         player_bank -= 1
                                         print(f"Beat = ${beat_var}, Bank = ${player_bank}")
-                                        time.sleep(3)
+                                        time.sleep(2)
                                         c()
                         elif option <= options:
                                 temp_beat_selected = posible_adds[option-1]
@@ -178,8 +156,8 @@ def select_beat(bank=0):
                                 if player_bank == 0:
                                         print("It's all your money")
                                         option = options +1
-                                        time.sleep(3)
-                                        c()
+                                time.sleep(1)
+                                c()
                         else:
                                 print("Option no reconcing")
                                 option = 0
@@ -187,7 +165,7 @@ def select_beat(bank=0):
         add_beat()
         while not exit:
                 print(f"\nSTATE [Bank ${player_bank} | Beat ${beat_var}]")
-                option = input("Press + to add in your beat, - for sustract, or 'Deal'! ")
+                option = input("Press + to add in your beat, - for sustract, or 'Deal'!: ")
                 option = option.lower()
                 if option in "+ -":
                         if option == '+':
@@ -197,17 +175,240 @@ def select_beat(bank=0):
                 if option == "deal":
                         exit = True
                         print("Saving...")
-                        time.sleep(1)
+                        time.sleep(0.5)
 
         print(f"FINAL STATE [Bank ${player_bank} | Beat ${beat_var}]")
-        time.sleep(2) 
+        time.sleep(1) 
         c()
 
         return {'beat':beat_var,'bank':player_bank}
 
+def get_card(cards_a,player=0,dealer=0):
+ 
+        cards_system = cards_a['cards']
+        cards_player = cards_a['cards player']
+        cards_dealer = cards_a['cards dealer']
+        cards_stock = 0
+        
+        def stoc_card_f():
+                nonlocal cards_stock
+                nonlocal cards_system
+                cards_stock = 0
+                for key_pack in cards_system:
+                        cards_stock += len(cards_system[key_pack])
+        stoc_card_f()
+
+        def add_card_user(user_cards=[]):
+                nonlocal cards_system
+                nonlocal cards_stock
+                cards_user = user_cards 
+                #selecting a deck
+                card_pack_keys = []
+                for key in cards_system:
+                        card_pack_keys.append(key)
+                leght_pack = len(card_pack_keys) #an index more
+                random_pack = random.randint(1,leght_pack)
+                random_pack -= 1 # substracting de extra index
+                pack_key = card_pack_keys[random_pack]
+                #selecting a card from deck selected
+                card_keys = []
+                for key in cards_system[pack_key]:
+                        card_keys.append(key)
+                random_card = random.randint(0,len(card_keys)-1)
+                card_key = card_keys[random_card]
+                #poping and adding de card
+                moment_dict = {}
+                moment_dict[card_key] = cards_system[pack_key].pop(card_key)
+                cards_user.append(moment_dict)
+                #cards_user[card_key] = cards_system[pack_key].pop(card_key) 
+                #delet if the dek is empty
+                if len(cards_system[pack_key]) == 0:
+                        bum = cards_system.pop(pack_key)
+                stoc_card_f()
+                print(cards_stock)
+                return cards_user
+ 
+        while player > 0:
+                cards_player = add_card_user(cards_player)
+                player-=1
+        while dealer > 0:
+                cards_dealer = add_card_user(cards_dealer) 
+                dealer-=1
+       
+        #return
+        all_cards = {
+                'cards':cards_system,
+                'cards player':cards_player,
+                'cards dealer':cards_dealer,
+                'cards stock':cards_stock
+                }
+        return all_cards
+
+def get_score(score={},cards_player=[],cards_dealer=[]):
+        score_var = score
+         
+        for card in cards_player: #score player
+                for key in card:
+                        if key == 'A':
+                                #two values
+                                score_var['player']+=11
+                        else:
+                                score_var['player']+=int(card[key])
+        for card in cards_dealer: #socore system
+                for key in card:
+                        if key == 'A':
+                                #two values
+                                score_var['dealer']+=11
+                        else:
+                                score_var['dealer']+=int(card[key])
+        return score_var
+
+def show_cards(cards_player,cards_dealer):
+        print("Cards player <<[",end="")
+        for card in cards_player:
+                for key in card:
+                        print(key,end="")
+        print("]>>")
+        print("Cards dealer <<[",end="")
+        for card in cards_dealer:
+                for key in card:
+                        print(key,end="")
+        print("]>>")
+
+
+def continue_game(cards_a,beat_v,bank_v,score_v):
+        cards = cards_a['cards']
+        cards_stock = cards_a['cards stock']
+        cards_player = cards_a['cards player']
+        cards_dealer = cards_['cards dealer']
+
+        score = score_v 
+        beat = beat_v
+        player_bank = bank_v
+
+        def get_cards(player_n=0,dealer_n=0):
+                nonlocal cards
+                nonlocal cards_stock
+                nonlocal cards_player
+                nonlocal cards_dealer
+                all_cards = {
+                        'cards':cards,
+                        'cards player':cards_player,
+                        'cards dealer':cards_dealer
+                }
+                moment_cards = get_card(cards_a=all_cards,player_n,dealer_n)
+                cards = moment_cards['cards']
+                cards_stock = moment_cards['cards stock']
+                cards_player = moment_cards['cards player']
+                cards_dealer = moment_cards['cards dealer']
+
+        def game_result(state='lose'):
+                nonlocal beat
+                nonlocal player_bank
+
+                if state == 'win':
+                        player_bank += beat*2
+                elif state == 'tie':
+                        player_bank += beat
+                beat = 0
+        def play_system():
+                #
+        def show_hands():
+                #
+        def first_dealer_card():
+                nonlocal cards_dealer
+
+                dealer_card = ''
+                for key in cards_dealer[0]:
+                        dealer_card = key
+                return dealer_card
+
+        continue_g = True
+        while continue_g:
+                if beat == 0: #continue whit cards from last game
+                        temp_beat_bank = select_beat(player_bank)
+                        player_bank = temp_beat_bank['bank']
+                        beat = temp_beat_bank['beat']
+                        get_cards(player_n=2,dealer_n=2):
+                        score = get_score(score,cards_player,cards_dealer)
+                        art.logo_f(cards_player,player_bank,score,beat,first_dealer_card(),cards_stock)
+
+                skip_question = False
+                if score['player'] == 21:
+                        if score['dealer'] == 21:
+                                print("Wow! You're tie")
+                                game_result('tie')
+                        else:
+                                print("Congratulations, You WIN!")
+                                game_result('win')
+                        print(f"Your score = {socre['player']}, Dealer score = {score['dealer']}}")
+                        show_cards(cards_player,cards_dealer)
+                        skip_question = True
+                elif score['dealer'] == 21:
+                        print("Sorry, you lose! :(")
+                        print(f"Your score = {socre['player']}, Dealer score = {score['dealer']}}")
+                        game_result('lose')
+                        show_cards(cards_player,cards_dealer)
+                        skip_question = True
+
+                if not skip_question and not beat*2 > player_bank:
+                        print("Would you like to double the bet?)
+                        double_beat = input("Type yes = confirm or wathever = not: ")
+                        double_beat = double_beat.lower()
+                        if double_beat == 'yes':
+                                player_bank -= beat
+                                beat = beat*2
+                                get_cards(player_n=1,dealer_n=0):
+                                c()
+                                art.logo_f(cards_player,player_bank,score,beat,first_dealer_card(),cards_stock)
+                                show_hands()
+                                skip_question = True
+                while not skip_question:
+                        print("Do you want a card more?")
+                        card_more = input("Type yes = confirm or wathever = show hands: ")
+                        card_more = card_more.lower()
+                        if card_more == 'yes':
+                                get_cards(player_n=1,dealer_n=0):
+                                score = get_score(score,cards_player,cards_dealer)
+                                c()
+                                art.logo_f(cards_player,player_bank,score,beat,first_dealer_card(),cards_stock)
+
+                                if score['player'] >= 21:
+                                        show_hands()
+                                        skip_question = True
+                        else:
+                                show_hands()
+                                skip_question = True
+
+
+                if player_bank == 0 or cards_stock == 0: #Sources are finished
+                        continue_g = False
+                else:
+                        print("\nIf you want continue with your actual sources")
+                        want_continue = input("Type yes = confim, or wathever = no: )
+                        want_continue = want_continue.lower()
+                        if want_continue == 'yes':
+                                continue_g = True
+                        else:
+                                continue_g = False 
+                #resetin cards
+                cards_player = []
+                cards_dealer = []
+
+        print("Do you want A new Game?")
+        try_option  = input("Press yes, or no: ")
+        try_option = try_option.lower()
+        if try_option == 'yes':
+                try_option = True
+        else:
+                try_option = False
+        
+        return = try_option
+
 def main():
-        cards = []
         beat = 0
+        cards = {}
+        cards_stock = 1
         cards_player = []
         cards_dealer = []
         show_dealer_card = ''
@@ -217,54 +418,33 @@ def main():
                 'dealer': 0
         }
 
+        cards = init_cards_packs(4)
 
-        cards += init_cards_packs()
         temp_beat_bank = select_beat(player_bank)
         player_bank = temp_beat_bank['bank']
         beat = temp_beat_bank['beat']
-        print(player_bank,beat,"Finished")
+        
+        all_cards = {
+                'cards':cards,
+                'cards player':cards_player,
+                'cards dealer':cards_dealer
+                }
+        moment_cards = get_card(cards_a=all_cards,player=2,dealer=2)
+        cards = moment_cards['cards']
+        cards_stock = moment_cards['cards stock']
+        cards_player = moment_cards['cards player']
+        cards_dealer = moment_cards['cards dealer']
+
+        score = get_score(score,cards_player,cards_dealer)
+        dealer_card = ''
+        for key in cards_dealer[0]:
+                dealer_card = key
+
+        art.logo_f(cards_player,player_bank,score,beat,dealer_card,cards_stock)
+
+        try_again = continue_game(moment_cards,beat,player_bank,score)
+
+        if try_again:
+                main()
 
 main()
-#Hint 5: Deal the user and computer 2 cards each using deal_card() and append().
-user_cards = []
-computer_cards = []
-
-#Hint 6: Create a function called calculate_score() that takes a List of cards as input 
-#and returns the score. 
-#Look up the sum() function to help you do this.
-
-#Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) 
-#and return 0 instead of the actual score. 0 will represent a blackjack in our game.
-
-#Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21
-#remove the 11 and replace it with a 1. You might need to look up append() and remove().
-
-#Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21,
-#then the game ends.
-
-#Hint 10: If the game has not ended, ask the user if they want to draw another card.
-#If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
-
-#Hint 11: The score will need to be rechecked with every new card drawn and the
-#checks in Hint 9 need to be repeated until the game ends.
-
-#Hint 12: Once the user is done, it's time to let the computer play.
-#The computer should keep drawing cards as long as it has a score less than 17.
-
-#Hint 13: Create a function called compare() and pass in the user_score and computer_score.
-#If the computer and user both have the same score, then it's a draw.
-#If the computer has a blackjack (0), then the user loses. If the user has a blackjack (0),
-#then the user wins. If the user_score is over 21, then the user loses.
-#If the computer_score is over 21, then the computer loses. If none of the above,
-#then the player with the highest score wins.
-
-#Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game
-#of blackjack and show the logo from art.py.
-
-
-
-
-
-
-
-
