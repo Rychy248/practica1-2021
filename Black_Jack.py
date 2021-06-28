@@ -2,9 +2,9 @@ import os
 import time
 import random
 
-import day11_art as art
+import Black_Jack_art as art
 
-c = lambda : os.system('clear')
+c = lambda : os.system('cls')
 
 def clean():
     """
@@ -13,7 +13,6 @@ def clean():
     input("\n\nPress enter, to continue....")
     c()
  
-#DAY END PROJECT
 def init_cards_packs(pack_want=4):
         def card_pack_f():
                 card_pack ={ 
