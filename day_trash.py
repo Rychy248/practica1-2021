@@ -1,3 +1,36 @@
+import random 
+
+def tim_forward():
+    print("forward")
+
+def tim_bacward():
+    print("backrward")
+
+def tim_right():
+    print("right")
+
+def tim_left():
+    print("left")
+ 
+def random_walk():
+    """random walk"""
+    steps = 20
+    directions_avanc = {
+        "forward" : tim_forward,
+        "backward" : tim_backward
+    }
+    directions_keys = ["forward","backward"]
+    turn_sices = {
+        "right" : tim_right,
+        "left" : tim_left
+    }
+    turn
+    rand_direction = random.choice(directions_avanc)
+    rand_turn = random.choice(turn_sices)
+    print(rand_direction)
+    print(rand_turn)
+
+
 var1 = "I'm var 1"
 
 def fun1():

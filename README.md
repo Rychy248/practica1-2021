@@ -19,7 +19,7 @@ Day 6  - Escape the Maze.
 
 Day 7  - Hangman.
 
-Day 8  - Cesar Cipher (encription).
+Day 8  - Cesar Cipher (encription). 
 
 Day 9  - The secret Audition.
 
@@ -36,3 +36,7 @@ Day 14 - High Lower Game.
 Day 15 - Coffe Machine, functionality programation.
 
 Day 16 - Coffe Machine, OPP.
+
+Day 17 - Quizz
+
+Day 18 - Turtle Graphics
