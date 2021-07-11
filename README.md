@@ -39,4 +39,6 @@ Day 16 - Coffe Machine, OPP.
 
 Day 17 - Quizz
 
-Day 18 - Turtle Graphics
+Day 18 - Turtle Graphics / Hirst painting
+
+Day 19 - Turtle Race
