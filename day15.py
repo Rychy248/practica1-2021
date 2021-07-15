@@ -1,3 +1,5 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
+
 import os
 
 from day14_art import logo, vs

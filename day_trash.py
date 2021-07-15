@@ -1,3 +1,5 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
+
 import random 
 
 def tim_forward():

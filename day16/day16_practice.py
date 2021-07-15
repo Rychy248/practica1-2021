@@ -1,3 +1,4 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
 
 # import turtle 
 from turtle import Turtle, Screen

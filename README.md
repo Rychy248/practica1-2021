@@ -1,8 +1,11 @@
 # Python-practice
 Python Bootcamp!
+created by Ricardo Hernández,
+CONTACT ME -> jorgeajrhh@gmail.com 
+  whatsapp -> +502 4209 0991 
 
 Itś only files where I practice python!
-There are some games for terminal!
+There are some games for terminal and GUI!
 Look it!
 
 Day 1  - Band Name Generator.
@@ -42,3 +45,5 @@ Day 17 - Quizz
 Day 18 - Turtle Graphics / Hirst painting
 
 Day 19 - Turtle Race
+
+Day 20 and 21 - Snake Game (GUI)

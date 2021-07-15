@@ -1,3 +1,5 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
+
 def logo_f(cards_player={},bank=0,score={},beat=0,dealer_card='',stock_cards=0):
     """
     cards_player is a list of dicts about cards 

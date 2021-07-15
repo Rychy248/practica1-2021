@@ -1,3 +1,4 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
 
 from turtle import Turtle, Screen
 import random

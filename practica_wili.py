@@ -1,5 +1,4 @@
-
-
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
 
 #Ejercicio 12
 

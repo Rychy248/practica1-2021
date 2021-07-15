@@ -1,3 +1,5 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
+
 class CoffeeMaker:
     """Models the machine that makes the coffee"""
     def __init__(self):

@@ -1,3 +1,5 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
+
 import os
 import random
 c= lambda: os.system("clear")

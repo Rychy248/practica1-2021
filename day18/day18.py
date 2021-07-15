@@ -1,3 +1,5 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
+
 """
 Woking whit Turtle library
 Documentation https://docs.python.org/3/library/turtle.html

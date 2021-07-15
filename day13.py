@@ -1,3 +1,5 @@
+#CREATED BY RYCHY, contact me -> jorgeajrhh@gmail.com
+
 ############DEBUGGING#####################
 #Excercice three
 for number in range(1, 101):
