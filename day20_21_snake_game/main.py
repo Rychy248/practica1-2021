@@ -44,13 +44,10 @@ while game_is_on:
             if speed > 0:
                 speed -= 0.02
             score_board.up_level()  
-
-    for segment in snake.snake_body: 
-        if segment == snake.snake_body[0]:
-            pass
-        else:
-            if segment.distance(snake.snake_body[0]) < 10:
-                score_board.game_over()
-                game_is_on = False
+    #now we're using a slicen into the list
+    for segment in snake.snake_body[1:]: 
+        if segment.distance(snake.snake_body[0]) < 10:
+            score_board.game_over()
+            game_is_on = False
 
 screen.exitonclick()
