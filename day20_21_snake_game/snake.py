@@ -35,6 +35,12 @@ class Snake():
         body.goto(x,y)
         return body
 
+    def add_body(self):
+        """Add a peace of the body"""
+        x = self.snake_body[-1].xcor()
+        y = self.snake_body[-1].ycor()
+        self.snake_body.append(self.__body_part(x,y))
+
     def move(self):
         "Move the snake"
         #for i in range(start=, stop, step)
@@ -44,14 +50,15 @@ class Snake():
             self.snake_body[peace].color(random_rgb(),"white")
             self.snake_body[peace].goto(new_x,new_y)
              
-        if self.snake_body[0].xcor() > 300:
-            self.snake_body[0].goto(-300,self.snake_body[0].ycor())
+        if self.snake_body[0].xcor() > 130:
+            self.snake_body[0].goto(-450,self.snake_body[0].ycor())
+        elif self.snake_body[0].xcor() < -430:
+            self.snake_body[0].goto(150,self.snake_body[0].ycor())
+
         if self.snake_body[0].ycor() > 320:
-            self.snake_body[0].goto(self.snake_body[0].xcor(),-320)
-        if self.snake_body[0].xcor() < -300:
-            self.snake_body[0].goto(300,self.snake_body[0].ycor())
-        if self.snake_body[0].ycor() < -320:
-            self.snake_body[0].goto(self.snake_body[0].xcor(),320)
+            self.snake_body[0].goto(self.snake_body[0].xcor(),-340)
+        elif self.snake_body[0].ycor() < -320:
+            self.snake_body[0].goto(self.snake_body[0].xcor(),340)
         
         self.snake_body[0].forward(MOVE_DISTANCE)
 
