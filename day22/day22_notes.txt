@@ -1,0 +1,17 @@
+WATH NEED THE PONG GAME
+
+CLASSES
+#----1 Score board
+A Division into the screen
+Create the screen
+-Keep Score
+#----3 A ball
+Create the ball and make it move
+Detect collision with wall and bounce
+Detect collision with paddle
+#----4 A human player
+create and move a paddle
+Detect when paddle misses
+#----5 A compute player
+create another paddle
+
