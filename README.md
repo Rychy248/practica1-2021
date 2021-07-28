@@ -51,3 +51,7 @@ Day 20 and 21 - Snake Game (GUI)
 Day 22 - PIN PONG Game (GUI)
 
 Day 23 - The Turtle Crossing Game (GUI)
+
+Day 24 - Snake Game improved (GUI), email sended (terminal)
+
+Day 25 - Educational Game "States of US" (GUI), pandas library
