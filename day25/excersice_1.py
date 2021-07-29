@@ -39,7 +39,7 @@ print("Avegare temp = ",data.temp.mean())
 print("\n"*3)
 #print(data[day.["day"] == "Monday"]) the next line is equal to this|
 print(data[data.day == "Monday"],"'Monday data'")#HOW PRINT A COLUMN? here your answer
-#the column how have the max temp
+#the row how have the max temp
 print(data[data.temp == data.temp.max()],"'The day who have the max temp'")
 #you can acces into a column from a specifc column, like next
 tuesday = data[data.day == "Tuesday"]
