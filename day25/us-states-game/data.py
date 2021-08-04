@@ -17,12 +17,8 @@ class PandaData():
         return coor 
 
     def save_missed_states(self,rights_answers=[]):
-        missed_states = []
         all_states = self.data.state.to_list()
-        for state in all_states:
-            if str(state) not in rights_answers:
-                missed_states.append(state)
-
+        missed_states = [ state for state in all_states if str(state) not in rights_answers]
         print("Missed states")
         index = 1
         for state in missed_states:
