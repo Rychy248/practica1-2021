@@ -55,3 +55,7 @@ Day 23 - The Turtle Crossing Game (GUI)
 Day 24 - Snake Game improved (GUI), email sended (terminal)
 
 Day 25 - Educational Game "States of US" (GUI), pandas library
+
+Day 26 - NATO Alphabet (Terminal)
+
+Day 27 - Miles to kilometers (GUI with Tkinter)
