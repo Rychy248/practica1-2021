@@ -10,7 +10,8 @@ def clean():
 
 #DAY PROJECT
 #Password Generator Project
-# con el random.schuffle() se hubiera podido simplificar un monton esto
+# con el random.shuffle(), shuffle no retorna nada, solo cambia la lista original,
+# se hubiera podido simplificar un monton esto
 # el shuffle revuelve todo, lo que nos da la aletoriedad que con la funcion
 # nos matamos, aunque tambien la lista ya ordenada se podia desordenar.
 
