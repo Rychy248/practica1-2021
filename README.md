@@ -59,3 +59,9 @@ Day 25 - Educational Game "States of US" (GUI), pandas library
 Day 26 - NATO Alphabet (Terminal)
 
 Day 27 - Miles to kilometers (GUI with Tkinter)
+
+Day 28 - Pomodoro Timer (GUI with Tkinter)
+
+Day 29 - Passwords Manager (GUI with Tkinter)
+
+Day 30 - Passwords Manger Improved, Alphabet NATO (GUI with Tkinter)
