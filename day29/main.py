@@ -1,4 +1,3 @@
-#Objetivo del diagnostico es recabar la información de la institución
 import random
 import tkinter
 import pyclip #need pip install pyclip

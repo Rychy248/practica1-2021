@@ -8,6 +8,7 @@ colors_pd = pandas.DataFrame(dict_num_colors)
 colors_pd.to_csv("Squirrel_colors_nums.csv")
 data = pandas.read_csv("Squirrel_colors_nums.csv") 
 print(data)
+
 #other practice
 data = pandas.read_csv("2018_Squirrel_Data.csv") 
 colors = data["Primary Fur Color"].unique()
