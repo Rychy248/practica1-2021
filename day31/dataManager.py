@@ -1,4 +1,6 @@
 import pandas
+import random
+
 class AbsDataManager():
     def __init__(self,file_name="Palabras mas frecuentes de ingles - Hoja 1.csv"):
         self.file_name = file_name
@@ -71,6 +73,14 @@ class DataManager():
         
         #return super().all_words()     is other option to call an superior method, but now data manger is't an iterence
         #of the AbsDataManger
+    def nex_word(self):
+        words = self.read_unknow_words()
+        self.english = list(words.keys())
+        self.sphanish = list(words.values())
+
+        self.index = random.randint(0,len(self.english))
+        return ([self.english[self.index],self.sphanish[self.index]])
+
     def read_know_words(self):
         return self.know_words.data_dict
     
@@ -86,8 +96,9 @@ class DataManager():
     def delete_know_words(self,*args):
         return self.know_words.delete(*args)
 
-    def delete_unknow_words(self,*args):
-        return self.unknow_words.delete(*args)
+    def delete_unknow_words(self):
+        self.save_know_words({f'{self.english[self.index]}':f"{self.sphanish[self.index]}"})
+        return self.unknow_words.delete(self.index)
 
 def test_module():
     data = DataManager()
