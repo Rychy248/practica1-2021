@@ -64,6 +64,10 @@ class UI():
         if not self.unknow_word:
             self.canvas.itemconfig(self.card_img, image=self.card_front)
             self.unknow_word=True
+
+        if self.english is not None:
+            self.data.delete_unknow_words(self.english)
+
         word = self.data.nex_word()
         self.english = str(word[0])
         self.sphanish = str(word[1])
@@ -72,6 +76,8 @@ class UI():
 
     def my_vars(self):
         self.unknow_word = False
+        self.english = None
+        self.sphanish = None
 
     def labels(self):
         self.title = tkinter.Label()

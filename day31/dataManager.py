@@ -1,3 +1,4 @@
+from tkinter import Message
 import pandas
 import random
 
@@ -96,9 +97,16 @@ class DataManager():
     def delete_know_words(self,*args):
         return self.know_words.delete(*args)
 
-    def delete_unknow_words(self):
-        self.save_know_words({f'{self.english[self.index]}':f"{self.sphanish[self.index]}"})
-        return self.unknow_words.delete(self.index)
+    def delete_unknow_words(self,*args):
+        #Data dict {'English_word':'Sphanish_word'}
+        returnig = None
+        try:
+            self.save_know_words({f"{self.english[self.index]}":f"{self.sphanish[self.index]}"})
+            returning = self.unknow_words.delete(*args)
+        except IndexError:
+            returning = "Index Key wrong"
+
+        return returning
 
 def test_module():
     data = DataManager()
