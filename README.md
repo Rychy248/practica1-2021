@@ -65,3 +65,5 @@ Day 28 - Pomodoro Timer (GUI with Tkinter)
 Day 29 - Passwords Manager (GUI with Tkinter)
 
 Day 30 - Passwords Manager Improved, Alphabet NATO (GUI with Tkinter)
+
+Day 31 - Flash Cards Project, English to Sphanish (GUI with Tkinter, and Pandas)
