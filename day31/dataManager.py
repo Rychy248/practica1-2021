@@ -69,7 +69,7 @@ class DataManager():
         self.all_words = AllWords()
 
     def all_words(self):
-        return self.all_words.data_dict()
+        return self.all_words.data_dict
         #return self.unKnow_words().all_words() both clases, have this method
         
         #return super().all_words()     is other option to call an superior method, but now data manger is't an iterence
@@ -99,7 +99,7 @@ class DataManager():
 
     def delete_unknow_words(self,*args):
         #Data dict {'English_word':'Sphanish_word'}
-        returnig = None
+        returning = None
         try:
             self.save_know_words({f"{self.english[self.index]}":f"{self.sphanish[self.index]}"})
             returning = self.unknow_words.delete(*args)

@@ -25,12 +25,11 @@ class UI():
         self.my_vars()
         self.canvas()
         self.labels()
-        #self.entrys()
         self.buttons()
+        self.know()
         self.window.mainloop()
 
     def canvas(self):
-        #self.canvas = tkinter.Canvas(width=800, height=526, bg=BG_GEN_COLOR, highlightthickness=0)
         self.card_front = tkinter.PhotoImage(file="images/card_front.png")
         self.card_back = tkinter.PhotoImage(file="images/card_back.png")
 
@@ -41,26 +40,26 @@ class UI():
         self.canvas.grid(row=1,column=0, columnspan=2)
 
     def unknow(self):
+        self.window.after_cancel(self.flag_time)
         try:
             if self.unknow_word:
                 self.canvas.itemconfig(self.card_img, image=self.card_back)
-                self.canvas.itemconfig(self.card_languague, text="Sphanish" )
-                self.canvas.itemconfig(self.card_word, text=f"{self.sphanish}")
+                self.canvas.itemconfig(self.card_languague, text="Sphanish", fill="white")
+                self.canvas.itemconfig(self.card_word, text=f"{self.sphanish}", fill="white")
                 self.unknow_word = False
             else:
                 self.canvas.itemconfig(self.card_img, image=self.card_front)
-                self.canvas.itemconfig(self.card_languague, text="English" )
-                self.canvas.itemconfig(self.card_word, text=f"{self.english}")
+                self.canvas.itemconfig(self.card_languague, text="English", fill="black")
+                self.canvas.itemconfig(self.card_word, text=f"{self.english}", fill="black")
                 self.unknow_word = True
         except AttributeError:
             self.canvas.itemconfig(self.card_img, image=self.card_front)
             self.know()
-    
-        #time.sleep(4)
-        #self.canvas.itemconfig(self.card_img, image=self.card_front)
-        #self.know_word()
+
+        self.flag_time = self.window.after(3000,func=self.unknow)
     
     def know(self):
+        self.window.after_cancel(self.flag_time)
         if not self.unknow_word:
             self.canvas.itemconfig(self.card_img, image=self.card_front)
             self.unknow_word=True
@@ -71,13 +70,16 @@ class UI():
         word = self.data.nex_word()
         self.english = str(word[0])
         self.sphanish = str(word[1])
-        self.canvas.itemconfig(self.card_languague, text="English" )
-        self.canvas.itemconfig(self.card_word, text=f"{self.english}")
+        self.canvas.itemconfig(self.card_languague, text="English", fill="black")
+        self.canvas.itemconfig(self.card_word, text=f"{self.english}", fill="black")
+
+        self.flag_time = self.window.after(3000,func=self.unknow)
 
     def my_vars(self):
         self.unknow_word = False
         self.english = None
         self.sphanish = None
+        self.flag_time = self.window.after(3000,func=self.unknow)
 
     def labels(self):
         self.title = tkinter.Label()
@@ -86,9 +88,6 @@ class UI():
 
 
     def buttons(self):
-        #timer_text = canvas.create_text(100,132,text="00:00",fill="black", font=FONT_TITLE)
-        #Buttons
-
         self.unknow_image = tkinter.PhotoImage(file="images/wrong.png")
         self.btt_unknow = tkinter.Button(command=self.unknow)
         self.btt_unknow.config(bg=BG_GEN_COLOR, highlightthickness=0)
