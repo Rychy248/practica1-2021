@@ -4,3 +4,6 @@ day32/mails_practice/mail_credentials.
 day32/emails_on_mondays/mail_credentials.py
 day32/birthday_wisher/mail_credentials.py
 day32/birthday_wisher/birthdays.csv
+day33/API_sunset_times/my_position.py
+day33/API_ISS_overhead/my_position.py
+day33/API_ISS_overhead/mail_credentials.py
