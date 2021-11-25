@@ -17,4 +17,19 @@ quote8
      
     for i in range(len(quotes)):
         print(f"index={i+1} | quote={quotes[i]}")
-test1()
+#test1()
+
+#testign dicts
+def test2():
+    my_dict = {
+            "key1":"value1",
+            "key2":"value2",
+            "key3":"value3",
+            "key4":"value4",
+    }
+
+    for key in my_dict:
+        print(key)
+        print(my_dict[key])
+
+#test2()

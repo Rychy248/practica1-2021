@@ -57,7 +57,7 @@ def get_birthdays():
 
         if data_frame['sex'][0] == "Write your data here!":
             raise pd.errors.EmptyDataError
-
+        #it's like SELECT * FROM data_frame WHERE month==__current_month AND day==__currente_Day;
         birthdays = data_frame[
             (data_frame['month']==__get_current_month()) & 
             (data_frame['day']==__get_current_day())
@@ -126,8 +126,8 @@ def main():
                     sex=person['sex'],
                     )
                 send_mail(mail_body=letter,e_mail=person['email'])
-    else:
-        print("Nobody is in birthday")
+    #else:
+    #    print("Nobody is in birthday")
 
 
 main()

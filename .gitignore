@@ -4,5 +4,7 @@ day15_Coffee_Machine_Requirements.pdf
 day16/Coffee Machine Documentation.html
 day16/day16_Coffee+Machine+Program+Requirements.pdf
 day32/mail_credentials.py
-day32/Birthday_Wisher/mail_credentials.py
+day32/mails_practice/mail_credentials.py
 day32/emails_on_mondays/mail_credentials.py
+day32/birthday_wisher/mail_credentials.py
+day32/birthday_wisher/birthdays.csv
