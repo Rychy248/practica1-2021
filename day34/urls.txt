@@ -1,0 +1,11 @@
+
+
+# OPEN TRIVIA  DATABASE
+# WEB https://opentdb.com/
+# WEB generate api endpoint https://opentdb.com/api_config.php
+
+# -----STUDY HELPS
+    # HTM ENTITIES                   https://www.w3schools.com/html/html_entities.asp
+    # HTML ESCAPE/UNESCAPE           https://www.freeformatter.com/html-escape.html
+    # Decode HTML entities in python https://stackoverflow.com/questions/2087370/decode-html-entities-in-python-string
+    # 
