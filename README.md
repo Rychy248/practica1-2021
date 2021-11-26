@@ -67,3 +67,7 @@ Day 29 - Passwords Manager (GUI with Tkinter)
 Day 30 - Passwords Manager Improved, Alphabet NATO (GUI with Tkinter)
 
 Day 31 - Flash Cards Project, English to Sphanish (GUI with Tkinter, and Pandas)
+
+Day 32 - Sending Mails, Birthday greeting email automation (Pyhon Anyware)
+
+Day 33 - API endpoints, API calls, ISS notification by mail
