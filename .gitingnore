@@ -7,3 +7,4 @@ day32/birthday_wisher/birthdays.csv
 day33/API_sunset_times/my_position.py
 day33/API_ISS_overhead/my_position.py
 day33/API_ISS_overhead/mail_credentials.py
+day35/open_weather_API/open_wather_API_KEY.py
