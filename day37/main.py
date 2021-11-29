@@ -306,6 +306,10 @@ Visit your Tracking-dayli here: https://pixe.la/v1/users/rychy248/graphs/graph1.
                     grap_code.read_pixel(date=__ask_date())
             elif choise.upper() in ["E","EXIT","EX"]:
                 stop = True
+                messague_flag={
+                    "exist":True,
+                    "messague":"User exit!",
+                }
             else:
                 messague_flag={
                     "exist":True,
