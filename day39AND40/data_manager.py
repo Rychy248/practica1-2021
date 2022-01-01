@@ -154,3 +154,5 @@ class CustomersManager:
 # cm = CustomersManager()
 # print("GET response")
 # pprint(cm.get())
+
+# ---
