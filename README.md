@@ -80,3 +80,7 @@ Day 36 - Stock Trading News Alert, APIS [newsapis, twilio api, averageventage ap
 
 Day 37 - Habit Tracking, with PIXELA API
 Visit my practice day here: https://pixe.la/v1/users/rychy248/graphs/graph1.html
+
+Day 38 - Workout Tracking, using Google sheet, Sheety API
+
+Day 39AND40 - Flight Deal Finder, Flight club
