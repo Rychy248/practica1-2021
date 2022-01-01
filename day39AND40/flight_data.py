@@ -12,21 +12,20 @@ class FlightData:
         }
 
     def search_flights(self,IATA:str,lowestPrice:str) -> dict:
-        date = datetime.date.today()
+        date = datetime.date.today()+datetime.timedelta(days=1)
         today = f"{date.strftime('%d/%m/%Y')}"
         six_months_later = f"{(date + datetime.timedelta(days=(30*6))).strftime('%d/%m/%Y')}"
 
         params = {
             "fly_from":f"{IATA}",
-            "fly_to":"",
             "date_from":today,
             "date_to":six_months_later,
             "price_from":0,
-            "price_to":lowestPrice,
+            "price_to":f"{lowestPrice}",
         }
 
         response = req.get(url=self.ENDPOINT,params=params,headers=self.headers)
-        
+
         response.raise_for_status()
 
         return response.json()
