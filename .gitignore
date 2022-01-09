@@ -4,10 +4,12 @@ day15_Coffee_Machine_Requirements.pdf
 day16/Coffee Machine Documentation.html
 day16/day16_Coffee+Machine+Program+Requirements.pdf
 day32/mail_credentials.py
+day32/*/mail_credentials.py
 day32/mails_practice/mail_credentials.py
 day32/emails_on_mondays/mail_credentials.py
 day32/birthday_wisher/mail_credentials.py
 day32/birthday_wisher/birthdays.csv
+day33/*/mail_credentials.py
 day33/API_sunset_times/my_position.py
 day33/API_ISS_overhead/my_position.py
 day33/API_ISS_overhead/mail_credentials.py

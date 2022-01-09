@@ -1,0 +1,42 @@
+
+header{
+    width: 100%;
+    text-align: center;
+}
+#index{
+    float: left;
+    width: 20%;
+    box-shadow: 15px 10px 9px rgb(0,0,0,0.2); 
+    margin-bottom: 20px;
+}
+#me img{
+    width: 20%;
+    display: block;
+    margin-left: 20px;
+    border-radius: 100px;
+    margin-top: 5px;
+    height: 30%;
+}
+#contact-me table{
+    width: 100%;
+}
+
+#skills table{
+    width: 100%;
+}
+
+.content{
+    float: right;
+    width: 75%;
+    box-shadow: 15px 10px 10px rgb(0,0,0,0.2); 
+    margin-bottom: 20px;
+}
+
+footer{
+    padding: 20px;
+    box-shadow: 15px 10px 10px rgb(0,0,0,0.2); 
+    clear: both;
+}
+#pre-footer-line{
+    clear: both;
+}
